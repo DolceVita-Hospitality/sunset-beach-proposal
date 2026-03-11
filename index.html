@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunset Beach Resort — Management Proposal | DolceVita Hospitality</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+  :root {
+    --dv-dark: #0a252b;
+    --dv-dark2: #0f3740;
+    --dv-accent: #c9a96e;
+    --dv-accent-light: #e2d2b9;
+    --dv-bg: #fafaf8;
+    --dv-white: #ffffff;
+    --dv-text: #2c2c2c;
+    --dv-text-light: #6b6b6b;
+    --dv-border: #e8e4de;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page { size: A4 landscape; margin: 0; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--dv-text);
+    background: #1a1a1a;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── SLIDE BASE ─── */
+  .slide {
+    width: 297mm;
+    height: 210mm;
+    margin: 0 auto 20px;
+    position: relative;
+    overflow: hidden;
+    background: var(--dv-white);
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+  }
+  .slide:last-child { page-break-after: auto; }
+
+  /* ─── SLIDE VARIANTS ─── */
+  .slide--dark {
+    background: var(--dv-dark);
+    color: var(--dv-white);
+  }
+  .slide--gradient {
+    background: linear-gradient(135deg, var(--dv-dark) 0%, var(--dv-dark2) 100%);
+    color: var(--dv-white);
+  }
+  .slide--image {
+    background-size: cover;
+    background-position: center;
+    color: var(--dv-white);
+  }
+  .slide--image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10,37,43,0.88) 0%, rgba(10,37,43,0.6) 100%);
+    z-index: 1;
+  }
+  .slide--image > * { position: relative; z-index: 2; }
+
+  /* ─── TOP BAR (logo strip) ─── */
+  .slide-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 48px;
+    flex-shrink: 0;
+  }
+  .slide-topbar svg { height: 28px; width: auto; }
+  .slide-topbar svg .lf { fill: var(--dv-accent-light); }
+  .slide--white .slide-topbar svg .lf { fill: var(--dv-dark); }
+  .slide-topbar .topbar-label {
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(226,210,185,0.6);
+    font-weight: 500;
+  }
+  .slide--white .slide-topbar .topbar-label { color: var(--dv-text-light); }
+
+  /* ─── SLIDE CONTENT AREA ─── */
+  .slide-body {
+    flex: 1;
+    padding: 0 48px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .slide-body--top { justify-content: flex-start; padding-top: 12px; }
+
+  /* ─── TYPOGRAPHY ─── */
+  .slide-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+  }
+  .slide-title--large { font-size: 44px; }
+  .slide-title--small { font-size: 28px; }
+
+  .slide-subtitle {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--dv-accent-light);
+    letter-spacing: 0.3px;
+    margin-bottom: 24px;
+  }
+  .slide--white .slide-subtitle { color: var(--dv-accent); }
+
+  .slide-section-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dv-accent);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .slide-text {
+    font-size: 13.5px;
+    line-height: 1.7;
+    max-width: 900px;
+  }
+  .slide--dark .slide-text { color: rgba(255,255,255,0.85); }
+
+  /* ─── TWO COLUMN LAYOUT ─── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .two-col--wide-left { grid-template-columns: 1.2fr 0.8fr; }
+
+  .col-block h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .slide--dark .col-block h3 { color: var(--dv-accent-light); }
+  .col-block h4 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dv-accent);
+    font-weight: 600;
+    margin-top: 16px;
+    margin-bottom: 6px;
+  }
+  .col-block ul {
+    list-style: none;
+    padding: 0;
+  }
+  .col-block li {
+    font-size: 12.5px;
+    line-height: 1.6;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+  .col-block li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--dv-accent);
+  }
+  .slide--dark .col-block li { color: rgba(255,255,255,0.8); }
+
+  /* ─── PHASE TAG ─── */
+  .phase-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    border: 1px solid var(--dv-accent);
+    color: var(--dv-accent);
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 16px;
+    border-radius: 2px;
+  }
+
+  /* ─── METRICS ROW ─── */
+  .metrics-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid rgba(226,210,185,0.25);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 20px 0;
+  }
+  .metric {
+    padding: 20px 16px;
+    text-align: center;
+    border-right: 1px solid rgba(226,210,185,0.25);
+  }
+  .metric:last-child { border-right: none; }
+  .metric .val {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dv-accent);
+  }
+  .metric .lbl {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    color: rgba(255,255,255,0.5);
+  }
+  .slide--white .metric .lbl { color: var(--dv-text-light); }
+
+  /* ─── DELIVERABLES TABLE ─── */
+  .del-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .del-table th {
+    background: var(--dv-dark);
+    color: var(--dv-accent-light);
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .del-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--dv-border);
+    vertical-align: middle;
+  }
+  .del-table tr:nth-child(even) td { background: #fafaf8; }
+  .del-table .check { color: var(--dv-accent); font-weight: 700; text-align: center; font-size: 16px; }
+  .del-table .dash { color: #ccc; text-align: center; }
+
+  /* ─── FINANCIAL TABLE ─── */
+  .fin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 16px 0;
+  }
+  .fin-table th {
+    background: var(--dv-dark);
+    color: var(--dv-accent-light);
+    padding: 12px 18px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .fin-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--dv-border);
+  }
+  .fin-table tr:nth-child(even) td { background: #fafaf8; }
+  .fin-table .amount {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dv-dark);
+  }
+
+  /* ─── TIMELINE ─── */
+  .timeline-visual {
+    display: flex;
+    gap: 0;
+    margin: 24px 0;
+    height: 80px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .tl-phase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px 20px;
+    color: white;
+  }
+  .tl-phase--1 { background: var(--dv-accent); flex: 1; }
+  .tl-phase--2 { background: var(--dv-dark2); flex: 2; }
+  .tl-phase--3 { background: var(--dv-dark); flex: 4; }
+  .tl-phase .tl-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.7;
+  }
+  .tl-phase .tl-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  .tl-phase .tl-dur {
+    font-size: 11px;
+    opacity: 0.6;
+    margin-top: 2px;
+  }
+
+  /* ─── NEXT STEPS ─── */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 20px 0;
+  }
+  .step-card {
+    background: rgba(226,210,185,0.08);
+    border: 1px solid rgba(226,210,185,0.2);
+    border-radius: 6px;
+    padding: 24px;
+  }
+  .step-card .step-num {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--dv-accent);
+    margin-bottom: 8px;
+  }
+  .step-card h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dv-accent-light);
+    margin-bottom: 6px;
+  }
+  .step-card p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+  }
+
+  /* ─── COVER SPECIFIC ─── */
+  .cover-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    border-top: 1px solid rgba(226,210,185,0.2);
+    padding-top: 24px;
+    margin-top: 32px;
+  }
+  .cover-meta label {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--dv-accent);
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+  .cover-meta span {
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+  }
+  .badge {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 5px 16px;
+    border: 1px solid var(--dv-accent);
+    color: var(--dv-accent);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* ─── CLOSING FOOTER ─── */
+  .slide-footer {
+    padding: 14px 48px;
+    font-size: 8px;
+    color: rgba(226,210,185,0.4);
+    letter-spacing: 1px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .slide--white .slide-footer { color: var(--dv-text-light); }
+
+  /* ─── CALLOUT ─── */
+  .callout-gold {
+    background: linear-gradient(135deg, rgba(201,169,110,0.1) 0%, rgba(226,210,185,0.08) 100%);
+    border-left: 3px solid var(--dv-accent);
+    padding: 18px 22px;
+    border-radius: 0 6px 6px 0;
+    margin: 16px 0;
+  }
+  .callout-gold p { font-size: 13px; line-height: 1.7; margin: 0; }
+  .slide--dark .callout-gold { background: rgba(201,169,110,0.08); }
+
+  /* ─── PARTNERSHIP BOXES ─── */
+  .partner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 16px;
+  }
+  .partner-box {
+    border: 1px solid rgba(226,210,185,0.2);
+    border-radius: 8px;
+    padding: 28px;
+    background: rgba(255,255,255,0.03);
+  }
+  .partner-box h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--dv-accent-light);
+    margin-bottom: 4px;
+  }
+  .partner-box .role {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dv-accent);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .partner-box li {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 4px;
+    list-style: none;
+  }
+  .partner-box li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--dv-accent);
+  }
+
+  /* ─── PRINT ─── */
+  @media print {
+    body { background: white; }
+    .slide { margin: 0; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SLIDE 1 — COVER                                      -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="slide slide--image" style="background-image:url('https://sunset-beach-resort-marina-spa.hotels-saudi-arabia.com/data/Photos/OriginalPhoto/6641/664104/664104861/photo-sunset-beach-resort-for-entertainment-al-khobar-1.JPEG');">
+  <div class="slide-topbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
+    <span class="topbar-label">Management &amp; Luxury Repositioning Proposal</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-section-label">Prepared exclusively for HRH Prince Abdulaziz &mdash; FAMA Holdings</div>
+    <h1 class="slide-title slide-title--large">Sunset Beach Resort<br>Marina &amp; Spa</h1>
+    <div class="slide-subtitle">Management &amp; Luxury Repositioning Proposal</div>
+    <div class="cover-meta">
+      <div><label>Location</label><span>Al Khobar, Eastern Province, Kingdom of Saudi Arabia</span></div>
+      <div><label>Presented by</label><span>DolceVita Hospitality &amp; Sophos Hotels</span></div>
+      <div><label>Date</label><span>March 2026</span></div>
+      <div><label>Classification</label><span>Confidential &mdash; For Intended Recipient Only</span></div>
+    </div>
+    <div class="badge">CONFIDENTIAL</div>
+  </div>
+  <div class="slide-footer">&copy; 2022&ndash;2026 DolceVita Hospitality Srl &bull; Via Larga N. 8, 20122 Milano, Italia</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SLIDE 2 — THE VISION                                  -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="slide slide--gradient">
+  <div class="slide-topbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
+    <span class="topbar-label">DolceVita Hospitality</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-section-label">The Vision</div>
+    <h1 class="slide-title slide-title--large" style="max-width:800px;"><em>Transforming the Eastern Province's most iconic coastal estate into the Kingdom's premier luxury waterfront destination.</em></h1>
+    <p class="slide-text" style="margin-top:24px; max-width:700px;">
+      Sunset Beach Resort sits on irreplaceable land &mdash; a private peninsula with 360-degree waterfront access, a marina, and direct proximity to Bahrain. Its physical DNA is extraordinary. What it needs is not more concrete, but better operations, a luxury brand identity, and a guest experience worthy of its setting.
+    </p>
+    <p class="slide-text" style="margin-top:12px; max-width:700px;">
+      This proposal outlines how we will unlock that potential &mdash; first through operational excellence, then through strategic redevelopment &mdash; creating enduring value for generations.
+    </p>
+  </div>
+  <div class="slide-footer">&copy; 2022&ndash;2026 DolceVita Hospitality Srl</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SLIDE 3 — THE OPPORTUNITY                             -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="slide slide--image" style="background-image:url('https://sunset-beach-resort-marina-spa.hotels-saudi-arabia.com/data/Photos/OriginalPhoto/17431/1743157/1743157160/photo-sunset-beach-resort-for-entertainment-al-khobar-19.JPEG');">
+  <div class="slide-topbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
+    <span class="topbar-label">DolceVita Hospitality</span>
+  </div>
+  <div class="slide-body slide-body--top">
+    <div class="slide-section-label">The Opportunity</div>
+    <h2 class="slide-title">An Irreplaceable Asset,<br>Ready to Be Unlocked</h2>
+    <div class="metrics-row" style="max-width:860px;">
+      <div class="metric"><div class="val">253</div><div class="lbl">Keys / Units</div></div>
+      <div class="metric"><div class="val">3</div><div class="lbl">Private Beaches</div></div>
+      <div class="metric"><div class="val">360&deg;</div><div class="lbl">Waterfront Access</div></div>
+      <div class="metric"><div class="val">7&ndash;9 km</div><div class="lbl">To Bahrain Causeway</div></div>
+    </div>
+    <div class="two-col" style="margin-top:16px; max-width:860px;">
+      <div class="col-block">
+        <h4>Resort Facilities</h4>
+        <ul>
+          <li>3 restaurants &amp; dining venues</li>
+          <li>Event &amp; conference hall</li>
+          <li>Aqua park &amp; 2 spas</li>
+          <li>Marina &amp; sports facilities</li>
+          <li>Private peninsula location</li>
+        </ul>
+      </div>
+      <div class="col-block">
+        <h4>Strategic Position</h4>
+        <ul>
+          <li>GCC pioneer &mdash; luxury resort since 1970s</li>
+          <li>10 km from Al Khobar city center</li>
+          <li>4-hour drive from Riyadh</li>
+          <li>Direct Bahrain corridor access</li>
+          <li>Vision 2030 tourism alignment</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">&copy; 2022&ndash;2026 DolceVita Hospitality Srl</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SLIDE 4 — OUR APPROACH                                -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="slide slide--dark">
+  <div class="slide-topbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
+    <span class="topbar-label">DolceVita Hospitality</span>
+  </div>
+  <div class="slide-body slide-body--top">
+    <div class="slide-section-label">Our Approach</div>
+    <h2 class="slide-title">Operations First.<br>Then Invest with Confidence.</h2>
+    <p class="slide-text" style="margin-bottom:24px; max-width:800px;">
+      A phased approach that proves the asset's commercial potential before committing to large-scale capital expenditure. Each phase builds on the last &mdash; creating real data, real reputation, and real returns that inform every subsequent decision.
+    </p>
+    <div class="timeline-visual">
+      <div class="tl-phase tl-phase--1">
+        <span class="tl-label">Phase 1</span>
+        <span class="tl-title">Takeover &amp; Transformation</span>
+        <span class="tl-dur">Months 0&ndash;12</span>
+      </div>
+      <div class="tl-phase tl-phase--2">
+        <span class="tl-label">Phase 2</span>
+        <span class="tl-title">Development &amp; Pre-Opening</span>
+        <span class="tl-dur">Months 13&ndash;36</span>
+      </div>
+      <div class="tl-phase tl-phase--3">
+        <span class="tl-label">Phase 3</span>
+        <span class="tl-title">Full Management &amp; Brand Guardianship</span>
+        <span class="tl-dur">15 Years</span>
+      </div>
+    </div>
+    <div class="callout-gold" style="max-width:800px;">
+      <p>This approach provides real performance data to size any future investment accurately &mdash; perhaps SAR 2.26B is not needed, perhaps less achieves the same result. It places operators who deeply understand the property at the center of the future investment plan.</p>
+    </div>
+  </div>
+  <div class="slide-footer">&copy; 2022&ndash;2026 DolceVita Hospitality Srl</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SLIDE 5 — THE PARTNERSHIP                             -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="slide slide--dark">
+  <div class="slide-topbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
+    <span class="topbar-label">DolceVita Hospitality</span>
+  </div>
+  <div class="slide-body slide-body--top">
+    <div class="slide-section-label">The Partnership</div>
+    <h2 class="slide-title">Two World-Class Partners.<br>One Unified Vision.</h2>
+    <div class="partner-grid">
+      <div class="partner-box">
+        <h3>DolceVita Hospitality</h3>
+        <div class="role">Luxury Advisory &amp; Brand Leadership</div>
+        <ul>
+          <li>Luxury guest experience design &amp; service culture</li>
+          <li>Brand repositioning &amp; identity development</li>
+          <li>F&amp;B concept direction &amp; lifestyle programming</li>
+          <li>Leadership coaching &amp; luxury service training</li>
+          <li>Quality assurance &amp; brand guardianship</li>
+          <li>Vision, concept &amp; masterplan direction</li>
+          <li>Architecture &amp; design studio coordination</li>
+        </ul>
+      </div>
+      <div class="partner-box">
+        <h3>Sophos Hotels</h3>
+        <div class="role">Operational Management &amp; Swiss Excellence</div>
+        <ul>
+          <li>Day-to-day resort management &amp; operations</li>
+          <li>Standard operating procedures &amp; governance</li>
+          <li>Revenue management &amp; cost optimization</li>
+          <li>Sales, marketing &amp; distribution strategy</li>
+          <li>Recruitment, staffing &amp; national talent development</li>
+          <li>IT systems, PMS &amp; technology infrastructure</li>
+          <li>Construction support &amp; technical advisory</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">&copy; 2022&ndash;2026 DolceVita Hospitality Srl</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SLIDE 6 — PHASE 1                                     -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="slide slide--white" style="background:var(--dv-white);">
+  <div class="slide-topbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
+    <span class="topbar-label">DolceVita Hospitality</span>
+  </div>
+  <div class="slide-body slide-body--top">
+    <div class="phase-tag">Phase 1 &mdash; Months 0 to 12</div>
+    <h2 class="slide-title slide-title--small" style="color:var(--dv-dark);">Operational Takeover &amp;<br>Luxury Transformation</h2>
+    <div class="two-col" style="margin-top:12px;">
+      <div class="col-block">
+        <h4>Operations &amp; Commercial</h4>
+        <ul style="color:var(--dv-text);">
+          <li>Immediate resort takeover &amp; day-to-day management</li>
+          <li>Establish SOPs, governance &amp; quality assurance systems</li>
+          <li>Restructure operations staffing &amp; organizational framework</li>
+          <li>New commercial &amp; marketing strategy for optimal reach</li>
+          <li>Strengthen online presence: website, OTAs, social media</li>
+          <li>Evaluate &amp; reduce costs without affecting service quality</li>
+          <li>Recruitment &amp; training plans for national talent development</li>
+        </ul>
+      </div>
+      <div class="col-block">
+        <h4>Luxury Standards &amp; Brand</h4>
+        <ul style="color:var(--dv-text);">
+          <li>Complete luxury guest experience audit &amp; redesign</li>
+          <li>Service culture transformation &amp; luxury training programs</li>
+          <li>Leadership coaching for senior management team</li>
+          <li>Brand audit &amp; market positioning strategy</li>
+          <li>F&amp;B concept direction &amp; dining experience design</li>
+          <li>Digital brand strategy &amp; visual identity refresh</li>
+          <li>Quality assurance framework &amp; monitoring systems</li>
+        </ul>
+        <h4 style="margin-top:14px;">Strategic Consultancy</h4>
+        <ul style="color:var(--dv-text);">
+          <li>Future strategic concept &amp; positioning development</li>
+          <li>Business plan for desired concept approach</li>
+          <li>Facilitate negotiations with international brands</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer" style="color:var(--dv-text-light);">&copy; 2022&ndash;2026 DolceVita Hospitality Srl</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SLIDE 7 — PHASE 2                                     -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="slide slide--white" style="background:var(--dv-white);">
+  <div class="slide-topbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
+    <span class="topbar-label">DolceVita Hospitality</span>
+  </div>
+  <div class="slide-body slide-body--top">
+    <div class="phase-tag">Phase 2 &mdash; Months 13 to 36</div>
+    <h2 class="slide-title slide-title--small" style="color:var(--dv-dark);">Strategic Development &amp;<br>Pre-Opening</h2>
+    <div class="two-col" style="margin-top:12px;">
+      <div class="col-block">
+        <h4>Technical Services &amp; Design</h4>
+        <ul style="color:var(--dv-text);">
+          <li>Master plan &amp; architectural review with site circulation</li>
+          <li>Configuration &amp; space planning: keys mix, F&amp;B, spa, aqua park</li>
+          <li>Interior design integration &amp; signage concepts</li>
+          <li>F&amp;B infrastructure design, equipment &amp; supplier advisory</li>
+          <li>IT backbone: PMS, POS, AV, CCTV, key systems, payments</li>
+          <li>Construction support &amp; project monitoring</li>
+        </ul>
+        <h4 style="margin-top:14px;">Pre-Opening</h4>
+        <ul style="color:var(--dv-text);">
+          <li>Pre-opening critical paths &amp; milestone plans</li>
+          <li>Organizational structures &amp; key position recruitment</li>
+          <li>Commercial launch plan: pricing, distribution, partnerships</li>
+          <li>Readiness audits for rooms, public areas, systems &amp; teams</li>
+        </ul>
+      </div>
+      <div class="col-block">
+        <h4>Vision, Concept &amp; Brand</h4>
+        <ul style="color:var(--dv-text);">
+          <li>Development of future strategic concept &amp; positioning</li>
+          <li>Masterplan vision &amp; feasibility analysis</li>
+          <li>Full brand identity for the repositioned resort</li>
+          <li>F&amp;B concepts &amp; lifestyle programming</li>
+          <li>Coordination with associate architecture &amp; design studio</li>
+        </ul>
+        <h4 style="margin-top:14px;">Guest Experience Design</h4>
+        <ul style="color:var(--dv-text);">
+          <li>Map physical &amp; emotional guest journey flows</li>
+          <li>Experience blueprints linking design, staffing &amp; technology</li>
+          <li>Service rituals at key revenue &amp; emotional moments</li>
+          <li>Train leaders &amp; teams on luxury service delivery</li>
+          <li>Deploy guest experience monitoring tools &amp; KPIs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer" style="color:var(--dv-text-light);">&copy; 2022&ndash;2026 DolceVita Hospitality Srl</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SLIDE 8 — PHASE 3                                     -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="slide slide--gradient">
+  <div class="slide-topbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
+    <span class="topbar-label">DolceVita Hospitality</span>
+  </div>
+  <div class="slide-body">
+    <div class="phase-tag">Phase 3 &mdash; 15 Years</div>
+    <h2 class="slide-title">Full Management &amp;<br>Brand Guardianship</h2>
+    <p class="slide-text" style="margin-bottom:24px; max-width:700px;">
+      Long-term operational management under a Hotel Management Agreement, with continuous luxury quality assurance and brand guardianship ensuring Sunset Beach maintains its position as the Eastern Province's premier destination.
+    </p>
+    <div class="two-col" style="max-width:860px;">
+      <div class="col-block">
+        <h4>Hotel Management</h4>
+        <ul>
+          <li>Full operational management per HMA terms</li>
+          <li>Continuous performance optimization</li>
+          <li>Revenue management &amp; cost control</li>
+          <li>Ongoing staff training &amp; talent development</li>
+          <li>Technology &amp; systems evolution</li>
+        </ul>
+      </div>
+      <div class="col-block">
+        <h4>Luxury Quality Assurance</h4>
+        <ul>
+          <li>Ongoing brand guardianship &amp; standards monitoring</li>
+          <li>Periodic luxury service training refreshers</li>
+          <li>Guest experience audits &amp; improvement programs</li>
+          <li>Reputation management &amp; KPI tracking</li>
+          <li>F&amp;B concept evolution &amp; lifestyle curation</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout-gold" style="margin-top:20px; max-width:860px;">
+      <p><strong>Contract Term:</strong> 15 years initial term, renewable for an additional 5 years upon mutual consent. Management fees structured as Base Fee (% of Gross Revenue) plus Incentive Fee (% of Adjusted Gross Operating Profit), aligning operator performance with owner returns.</p>
+    </div>
+  </div>
+  <div class="slide-footer">&copy; 2022&ndash;2026 DolceVita Hospitality Srl</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SLIDE 9 — GUEST EXPERIENCE PHILOSOPHY                 -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="slide slide--image" style="background-image:url('https://sunset-beach-resort-marina-spa.hotels-saudi-arabia.com/data/Photos/OriginalPhoto/6641/664140/664140240/photo-sunset-beach-resort-for-entertainment-al-khobar-59.JPEG');">
+  <div class="slide-topbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
+    <span class="topbar-label">DolceVita Hospitality</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-section-label">Guest Experience Philosophy</div>
+    <h2 class="slide-title">Luxury Is Not a Price Point.<br>It Is an Emotion.</h2>
+    <p class="slide-text" style="max-width:680px; margin-bottom:24px;">
+      Every touchpoint at Sunset Beach will be designed to create lasting emotional connections &mdash; from the moment of arrival to the memory of departure. Our approach transforms operations into experiences and staff into ambassadors.
+    </p>
+    <div class="two-col" style="max-width:860px;">
+      <div class="col-block">
+        <h4>Service Design Principles</h4>
+        <ul>
+          <li>Arrival choreography &mdash; first impressions that set the tone</li>
+          <li>Personalized recognition &amp; anticipatory service</li>
+          <li>F&amp;B as theater &mdash; culinary moments, not just meals</li>
+          <li>Spa &amp; wellness as transformation, not transaction</li>
+          <li>Departure ritual &mdash; ensuring guests leave wanting to return</li>
+        </ul>
+      </div>
+      <div class="col-block">
+        <h4>Culture &amp; Training</h4>
+        <ul>
+          <li>Leadership coaching: emotional intelligence &amp; luxury mindset</li>
+          <li>Service culture activation &mdash; pride in every detail</li>
+          <li>Revenue-linked guest experience KPIs (ADR, TRevPAR, repeat rates)</li>
+          <li>Continuous feedback loops &amp; mystery guest programs</li>
+          <li>National talent development with international benchmarks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">&copy; 2022&ndash;2026 DolceVita Hospitality Srl</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SLIDE 10 — KEY DELIVERABLES                           -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="slide slide--white" style="background:var(--dv-white);">
+  <div class="slide-topbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
+    <span class="topbar-label">DolceVita Hospitality</span>
+  </div>
+  <div class="slide-body slide-body--top">
+    <div class="slide-section-label">Key Deliverables</div>
+    <h2 class="slide-title slide-title--small" style="color:var(--dv-dark);">Comprehensive Scope by Phase</h2>
+    <table class="del-table" style="margin-top:12px;">
+      <thead><tr><th style="width:40%;">Deliverable</th><th style="width:20%; text-align:center;">Phase 1</th><th style="width:20%; text-align:center;">Phase 2</th><th style="width:20%; text-align:center;">Phase 3</th></tr></thead>
+      <tbody>
+        <tr><td>Day-to-day resort management &amp; operations</td><td class="check">&bull;</td><td class="check">&bull;</td><td class="check">&bull;</td></tr>
+        <tr><td>SOPs, governance &amp; quality systems</td><td class="check">&bull;</td><td class="check">&bull;</td><td class="check">&bull;</td></tr>
+        <tr><td>Sales, marketing &amp; distribution strategy</td><td class="check">&bull;</td><td class="check">&bull;</td><td class="check">&bull;</td></tr>
+        <tr><td>Luxury guest experience design &amp; service culture</td><td class="check">&bull;</td><td class="check">&bull;</td><td class="check">&bull;</td></tr>
+        <tr><td>Brand repositioning &amp; identity development</td><td class="check">&bull;</td><td class="check">&bull;</td><td class="dash">&mdash;</td></tr>
+        <tr><td>Leadership coaching &amp; luxury training programs</td><td class="check">&bull;</td><td class="check">&bull;</td><td class="check">&bull;</td></tr>
+        <tr><td>Strategic concept &amp; business plan development</td><td class="check">&bull;</td><td class="dash">&mdash;</td><td class="dash">&mdash;</td></tr>
+        <tr><td>International brand negotiations</td><td class="check">&bull;</td><td class="check">&bull;</td><td class="dash">&mdash;</td></tr>
+        <tr><td>Master plan, architecture &amp; design coordination</td><td class="dash">&mdash;</td><td class="check">&bull;</td><td class="dash">&mdash;</td></tr>
+        <tr><td>Vision, concept &amp; feasibility for redevelopment</td><td class="dash">&mdash;</td><td class="check">&bull;</td><td class="dash">&mdash;</td></tr>
+        <tr><td>IT systems, PMS &amp; technology infrastructure</td><td class="dash">&mdash;</td><td class="check">&bull;</td><td class="check">&bull;</td></tr>
+        <tr><td>Pre-opening management &amp; readiness audits</td><td class="dash">&mdash;</td><td class="check">&bull;</td><td class="dash">&mdash;</td></tr>
+        <tr><td>Brand guardianship &amp; quality assurance</td><td class="dash">&mdash;</td><td class="dash">&mdash;</td><td class="check">&bull;</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="slide-footer" style="color:var(--dv-text-light);">&copy; 2022&ndash;2026 DolceVita Hospitality Srl</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SLIDE 11 — FINANCIAL PROPOSAL                         -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="slide slide--dark">
+  <div class="slide-topbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
+    <span class="topbar-label">DolceVita Hospitality</span>
+  </div>
+  <div class="slide-body slide-body--top">
+    <div class="slide-section-label">Financial Proposal</div>
+    <h2 class="slide-title slide-title--small">Investment Summary</h2>
+    <table class="fin-table" style="margin-top:8px;">
+      <thead><tr><th>Phase</th><th>Duration</th><th>Monthly Fee</th><th>Annual Total</th><th>Scope</th></tr></thead>
+      <tbody>
+        <tr>
+          <td style="color:var(--dv-accent); font-weight:600;">Phase 1</td>
+          <td style="color:rgba(255,255,255,0.7);">Months 0&ndash;12</td>
+          <td class="amount">$37,083</td>
+          <td style="color:rgba(255,255,255,0.7);">~$445,000</td>
+          <td style="color:rgba(255,255,255,0.6); font-size:11.5px; line-height:1.5;">Operational management, luxury brand repositioning, guest experience design, service training, quality assurance, strategic consultancy</td>
+        </tr>
+        <tr>
+          <td style="color:var(--dv-accent); font-weight:600;">Phase 2</td>
+          <td style="color:rgba(255,255,255,0.7);">Months 13&ndash;36</td>
+          <td class="amount">$38,125</td>
+          <td style="color:rgba(255,255,255,0.7);">~$457,500</td>
+          <td style="color:rgba(255,255,255,0.6); font-size:11.5px; line-height:1.5;">Technical advisory, pre-opening, vision &amp; concept, masterplan, brand development, architecture coordination</td>
+        </tr>
+        <tr>
+          <td style="color:var(--dv-accent); font-weight:600;">Phase 3</td>
+          <td style="color:rgba(255,255,255,0.7);">15 Years</td>
+          <td class="amount">$15,000<span style="font-size:12px; font-family:Inter,sans-serif; font-weight:400; color:rgba(255,255,255,0.5);"> + fees</span></td>
+          <td style="color:rgba(255,255,255,0.7);">Variable</td>
+          <td style="color:rgba(255,255,255,0.6); font-size:11.5px; line-height:1.5;">Luxury quality assurance &amp; brand guardianship + management fees (Base + Incentive)</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="two-col" style="margin-top:16px; gap:32px;">
+      <div class="col-block">
+        <h4>Management Agreement Fees (Phase 2 onwards)</h4>
+        <ul>
+          <li><strong>Base Fee:</strong> 2.00% GR (Yr 1&ndash;2), 2.75% (Yr 3&ndash;5), 3.50% (Yr 6+)</li>
+          <li><strong>Incentive Fee:</strong> 0&ndash;7% of AGOP based on GOP performance tiers</li>
+          <li><strong>Quality Assurance:</strong> 0.50% of Gross Revenue</li>
+        </ul>
+      </div>
+      <div class="col-block">
+        <h4>Notes</h4>
+        <ul>
+          <li>Travel &amp; direct expenses charged at cost</li>
+          <li>Architecture &amp; design studio fees not included</li>
+          <li>All fees payable monthly from date of signing</li>
+          <li>Taxes: each party responsible for its own income taxes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">&copy; 2022&ndash;2026 DolceVita Hospitality Srl</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SLIDE 12 — TIMELINE                                   -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="slide slide--white" style="background:var(--dv-white);">
+  <div class="slide-topbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
+    <span class="topbar-label">DolceVita Hospitality</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-section-label">Project Timeline</div>
+    <h2 class="slide-title slide-title--small" style="color:var(--dv-dark);">From Signature to Long-Term Value</h2>
+    <div class="timeline-visual" style="height:90px; margin:20px 0;">
+      <div class="tl-phase tl-phase--1"><span class="tl-label">Phase 1</span><span class="tl-title">Takeover &amp; Transformation</span><span class="tl-dur">12 months &bull; $37,083/mo</span></div>
+      <div class="tl-phase tl-phase--2"><span class="tl-label">Phase 2</span><span class="tl-title">Development &amp; Pre-Opening</span><span class="tl-dur">24 months &bull; $38,125/mo + HMA fees</span></div>
+      <div class="tl-phase tl-phase--3"><span class="tl-label">Phase 3</span><span class="tl-title">Full Management &amp; Brand Guardianship</span><span class="tl-dur">15 years &bull; $15K/mo + % GR</span></div>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; margin-top:20px;">
+      <div>
+        <h4 style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--dv-accent); font-weight:600; margin-bottom:10px;">Phase 1 Milestones</h4>
+        <ul style="list-style:none; padding:0;">
+          <li style="font-size:12px; color:var(--dv-text); padding:4px 0; border-bottom:1px solid var(--dv-border);">Month 1 &mdash; Operational takeover &amp; audit</li>
+          <li style="font-size:12px; color:var(--dv-text); padding:4px 0; border-bottom:1px solid var(--dv-border);">Month 2&ndash;3 &mdash; SOPs, staffing restructure, brand audit</li>
+          <li style="font-size:12px; color:var(--dv-text); padding:4px 0; border-bottom:1px solid var(--dv-border);">Month 4&ndash;6 &mdash; Training rollout, commercial relaunch</li>
+          <li style="font-size:12px; color:var(--dv-text); padding:4px 0; border-bottom:1px solid var(--dv-border);">Month 7&ndash;9 &mdash; Guest experience transformation</li>
+          <li style="font-size:12px; color:var(--dv-text); padding:4px 0;">Month 10&ndash;12 &mdash; Performance review, concept finalized</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--dv-accent); font-weight:600; margin-bottom:10px;">Phase 2 Milestones</h4>
+        <ul style="list-style:none; padding:0;">
+          <li style="font-size:12px; color:var(--dv-text); padding:4px 0; border-bottom:1px solid var(--dv-border);">Month 13&ndash;15 &mdash; Design review &amp; master plan</li>
+          <li style="font-size:12px; color:var(--dv-text); padding:4px 0; border-bottom:1px solid var(--dv-border);">Month 16&ndash;20 &mdash; Brand identity &amp; concept development</li>
+          <li style="font-size:12px; color:var(--dv-text); padding:4px 0; border-bottom:1px solid var(--dv-border);">Month 21&ndash;28 &mdash; Construction support &amp; pre-opening</li>
+          <li style="font-size:12px; color:var(--dv-text); padding:4px 0; border-bottom:1px solid var(--dv-border);">Month 29&ndash;33 &mdash; Staff recruitment &amp; training</li>
+          <li style="font-size:12px; color:var(--dv-text); padding:4px 0;">Month 34&ndash;36 &mdash; Soft opening &amp; readiness audits</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--dv-accent); font-weight:600; margin-bottom:10px;">Phase 3 Ongoing</h4>
+        <ul style="list-style:none; padding:0;">
+          <li style="font-size:12px; color:var(--dv-text); padding:4px 0; border-bottom:1px solid var(--dv-border);">Full hotel management operations</li>
+          <li style="font-size:12px; color:var(--dv-text); padding:4px 0; border-bottom:1px solid var(--dv-border);">Quarterly luxury quality audits</li>
+          <li style="font-size:12px; color:var(--dv-text); padding:4px 0; border-bottom:1px solid var(--dv-border);">Annual training refreshers</li>
+          <li style="font-size:12px; color:var(--dv-text); padding:4px 0; border-bottom:1px solid var(--dv-border);">Continuous revenue optimization</li>
+          <li style="font-size:12px; color:var(--dv-text); padding:4px 0;">5-year renewal assessment</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer" style="color:var(--dv-text-light);">&copy; 2022&ndash;2026 DolceVita Hospitality Srl</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SLIDE 13 — WHY THIS PARTNERSHIP                       -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="slide slide--image" style="background-image:url('https://sunset-beach-resort-marina-spa.hotels-saudi-arabia.com/data/Photos/OriginalPhoto/17431/1743157/1743157182/photo-sunset-beach-resort-for-entertainment-al-khobar-27.JPEG');">
+  <div class="slide-topbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
+    <span class="topbar-label">DolceVita Hospitality</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-section-label">Why This Partnership</div>
+    <h2 class="slide-title">The Right Team for<br>an Extraordinary Asset</h2>
+    <div class="two-col" style="max-width:860px; margin-top:16px;">
+      <div class="col-block">
+        <ul>
+          <li><strong>Swiss operational precision</strong> meets <strong>Italian luxury sensibility</strong> &mdash; the gold standard in global hospitality</li>
+          <li><strong>Saudi market expertise</strong> through Sophos Hotels' local team, combined with <strong>international luxury benchmarks</strong> from DolceVita</li>
+          <li><strong>Proven methodology:</strong> a phased approach that de-risks investment while building real commercial value</li>
+        </ul>
+      </div>
+      <div class="col-block">
+        <ul>
+          <li><strong>End-to-end capability:</strong> from day-one operations to 15-year management, including brand development, design coordination, and ongoing quality assurance</li>
+          <li><strong>Owner-aligned incentives:</strong> management fees tied to performance, ensuring shared commitment to profitability</li>
+          <li><strong>Vision 2030 alignment:</strong> developing a destination that contributes to Saudi Arabia's tourism transformation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">&copy; 2022&ndash;2026 DolceVita Hospitality Srl</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SLIDE 14 — NEXT STEPS                                 -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="slide slide--dark">
+  <div class="slide-topbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
+    <span class="topbar-label">DolceVita Hospitality</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-section-label">Next Steps</div>
+    <h2 class="slide-title">We Invite FAMA Holdings<br>to Proceed</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h4>Review &amp; Align</h4>
+        <p>Review this proposal with your team. We welcome the opportunity to present in person and address any questions directly with Your Royal Highness.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h4>Sign Letter of Engagement</h4>
+        <p>Upon alignment, execute the Letter of Engagement formalizing the partnership terms, scope, and commercial framework outlined herein.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h4>Mobilize Within 30 Days</h4>
+        <p>Our joint team begins on-site assessment and operational takeover within 30 days of signing, with Phase 1 deliverables initiated immediately.</p>
+      </div>
+    </div>
+    <div class="callout-gold" style="max-width:800px; margin-top:8px;">
+      <p><strong>Validity:</strong> The commercial terms in this proposal are valid for a period of 30 days from the date of presentation. This proposal has been prepared in good faith and forms the basis for a future formal agreement between the parties.</p>
+    </div>
+  </div>
+  <div class="slide-footer">&copy; 2022&ndash;2026 DolceVita Hospitality Srl</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SLIDE 15 — CLOSING                                    -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="slide slide--gradient">
+  <div class="slide-topbar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
+    <span class="topbar-label">DolceVita Hospitality</span>
+  </div>
+  <div class="slide-body" style="text-align:center; align-items:center;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28" style="height:60px; width:auto; margin-bottom:28px;"><g><path fill="#e2d2b9" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon fill="#e2d2b9" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path fill="#e2d2b9" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon fill="#e2d2b9" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon fill="#e2d2b9" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect fill="#e2d2b9" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon fill="#e2d2b9" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon fill="#e2d2b9" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path fill="#e2d2b9" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon fill="#e2d2b9" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon fill="#e2d2b9" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon fill="#e2d2b9" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon fill="#e2d2b9" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon fill="#e2d2b9" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon fill="#e2d2b9" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon fill="#e2d2b9" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
+    <p style="font-family:'Playfair Display',Georgia,serif; font-size:22px; font-style:italic; color:var(--dv-accent-light); max-width:600px; line-height:1.5; margin-bottom:32px;">
+      Crafted with distinction for<br>His Royal Highness Prince Abdulaziz<br>&amp; FAMA Holdings
+    </p>
+    <div style="font-size:12px; color:rgba(226,210,185,0.6); line-height:2;">
+      <strong style="color:var(--dv-accent-light);">DolceVita Hospitality Srl</strong><br>
+      Via Larga N. 8, 20122 Milano, Italia<br>
+      In partnership with <strong style="color:var(--dv-accent-light);">Sophos Hotels Co. &mdash; KSA</strong>
+    </div>
+  </div>
+  <div class="slide-footer">&copy; 2022&ndash;2026 DolceVita Hospitality Srl, Via Larga N. 8, 20122 Milano, Italia. All Rights Reserved.</div>
+</section>
+
+</body>
+</html>
