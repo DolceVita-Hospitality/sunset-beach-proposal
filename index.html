@@ -179,10 +179,10 @@
   }
   .col-block li {
     font-size: 12.5px;
-    line-height: 1.6;
+    line-height: 1.7;
     padding-left: 14px;
     position: relative;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
   .col-block li::before {
     content: '';
@@ -197,8 +197,8 @@
   .slide--dark .col-block li { color: rgba(255,255,255,0.8); }
 
   /* Dense content for Phase 2 slides */
-  .dense-content .col-block h4 { margin-top: 8px; margin-bottom: 3px; font-size: 10px; letter-spacing: 1.5px; }
-  .dense-content .col-block li { font-size: 10.5px; line-height: 1.4; margin-bottom: 1px; }
+  .dense-content .col-block h4 { margin-top: 12px; margin-bottom: 5px; font-size: 10px; letter-spacing: 1.5px; }
+  .dense-content .col-block li { font-size: 10.5px; line-height: 1.55; margin-bottom: 3px; }
   .dense-content .col-block li::before { top: 6px; width: 4px; height: 4px; }
   .dense-content { gap: 36px; }
 
@@ -460,13 +460,15 @@
     background: linear-gradient(135deg, rgba(201,169,110,0.04) 0%, rgba(250,248,244,0.6) 100%);
     border: 1px solid rgba(201,169,110,0.15);
     border-radius: 8px;
-    padding: 18px 20px;
+    padding: 22px 24px;
   }
   .slide--luxury .col-block h4 {
     padding-left: 10px;
     border-left: 2.5px solid var(--dv-accent);
     color: var(--dv-dark);
     font-weight: 700;
+    margin-top: 18px;
+    margin-bottom: 8px;
   }
   .slide--luxury .col-block h4:first-child { margin-top: 0; }
   .slide--luxury .col-block li::before {
@@ -477,7 +479,8 @@
     border-top: 1px solid rgba(201,169,110,0.15);
   }
   /* Dense luxury overrides for Phase 2 */
-  .slide--luxury .dense-content .col-block { padding: 12px 14px; }
+  .slide--luxury .dense-content .col-block { padding: 16px 18px; }
+  .slide--luxury .dense-content .col-block h4 { margin-top: 14px; margin-bottom: 5px; }
 
   /* ─── CALLOUT ─── */
   .callout-gold {
