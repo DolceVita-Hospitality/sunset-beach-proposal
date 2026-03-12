@@ -96,7 +96,8 @@
   .topbar-partners .tp-moqam { height: 28px; width: auto; }
   .slide--dark .topbar-partners img,
   .slide--gradient .topbar-partners img,
-  .slide--image .topbar-partners img {
+  .slide--image .topbar-partners img,
+  .slide--luxury .topbar-partners img {
     background: rgba(255,255,255,0.92);
     padding: 2px 5px;
     border-radius: 3px;
@@ -422,7 +423,8 @@
 
   /* ─── LUXURY PHASE SLIDES ─── */
   .slide--luxury {
-    background: linear-gradient(168deg, #faf8f4 0%, #ffffff 40%, #faf8f4 100%);
+    background: linear-gradient(135deg, var(--dv-dark) 0%, var(--dv-dark2) 100%);
+    color: var(--dv-white);
   }
   .slide--luxury::before {
     content: '';
@@ -430,57 +432,49 @@
     left: 0;
     top: 0;
     bottom: 0;
-    width: 5px;
+    width: 4px;
     background: linear-gradient(180deg, var(--dv-accent) 0%, #d4b87a 50%, var(--dv-accent) 100%);
     z-index: 5;
   }
+  .slide--luxury .slide-topbar svg .lf { fill: var(--dv-accent-light); }
   .slide--luxury .phase-tag {
-    background: linear-gradient(135deg, var(--dv-accent) 0%, #d4b87a 100%);
-    color: var(--dv-white);
-    border: none;
+    background: rgba(201,169,110,0.12);
+    color: var(--dv-accent);
+    border: 1px solid rgba(201,169,110,0.3);
     padding: 5px 18px;
     font-size: 9px;
     letter-spacing: 2.5px;
-    box-shadow: 0 2px 8px rgba(201,169,110,0.3);
   }
   .slide--luxury .slide-title {
+    color: var(--dv-white);
     position: relative;
-    padding-bottom: 16px;
+    padding-bottom: 18px;
+    margin-bottom: 20px;
   }
   .slide--luxury .slide-title::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 80px;
-    height: 2px;
+    width: 60px;
+    height: 1.5px;
     background: linear-gradient(90deg, var(--dv-accent) 0%, transparent 100%);
   }
-  .slide--luxury .col-block {
-    background: linear-gradient(135deg, rgba(201,169,110,0.04) 0%, rgba(250,248,244,0.6) 100%);
-    border: 1px solid rgba(201,169,110,0.15);
-    border-radius: 8px;
-    padding: 22px 24px;
-  }
   .slide--luxury .col-block h4 {
-    padding-left: 10px;
-    border-left: 2.5px solid var(--dv-accent);
-    color: var(--dv-dark);
-    font-weight: 700;
+    color: var(--dv-accent);
     margin-top: 18px;
     margin-bottom: 8px;
   }
   .slide--luxury .col-block h4:first-child { margin-top: 0; }
-  .slide--luxury .col-block li::before {
-    background: linear-gradient(135deg, var(--dv-accent) 0%, #d4b87a 100%);
-    box-shadow: 0 0 4px rgba(201,169,110,0.4);
+  .slide--luxury .col-block li {
+    color: rgba(255,255,255,0.82);
   }
   .slide--luxury .slide-footer {
-    border-top: 1px solid rgba(201,169,110,0.15);
+    color: rgba(226,210,185,0.4);
   }
   /* Dense luxury overrides for Phase 2 */
-  .slide--luxury .dense-content .col-block { padding: 16px 18px; }
   .slide--luxury .dense-content .col-block h4 { margin-top: 14px; margin-bottom: 5px; }
+  .slide--luxury .slide-body p[style*="font-style:italic"] { color: rgba(226,210,185,0.6); }
 
   /* ─── CALLOUT ─── */
   .callout-gold {
@@ -689,7 +683,7 @@
 <!-- ══════════════════════════════════════════════════════ -->
 <!-- SLIDE 5 — PHASE 1                                     -->
 <!-- ══════════════════════════════════════════════════════ -->
-<section class="slide slide--white slide--luxury">
+<section class="slide slide--luxury">
   <div class="slide-topbar">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
     <div class="topbar-partners">
@@ -699,11 +693,11 @@
   </div>
   <div class="slide-body slide-body--top">
     <div class="phase-tag">Phase 1 &mdash; Months 0 to 12</div>
-    <h2 class="slide-title slide-title--small" style="color:var(--dv-dark);">Operational Takeover &amp;<br>Luxury Transformation</h2>
+    <h2 class="slide-title slide-title--small">Operational Takeover &amp;<br>Luxury Transformation</h2>
     <div class="two-col" style="margin-top:4px;">
       <div class="col-block">
         <h4>Management</h4>
-        <ul style="color:var(--dv-text);">
+        <ul>
           <li>Day to day management and operations of the Sunset Beach Resort &amp; Residence.</li>
           <li>Establishing operational policies and Standard Operating Procedures (SOPs)</li>
           <li>Design and execute a new commercial and marketing strategy to ensure optimal reach to targeted segments.</li>
@@ -716,7 +710,7 @@
       </div>
       <div class="col-block">
         <h4>Consultancy Services</h4>
-        <ul style="color:var(--dv-text);">
+        <ul>
           <li>Development of the future strategic concept and positioning that reflect the project's identity and meet market needs.</li>
           <li>Built a Business Plan according to the desired concept approach.</li>
           <li>Facilitate negotiations with International Brands.</li>
@@ -726,13 +720,13 @@
       </div>
     </div>
   </div>
-  <div class="slide-footer" style="color:var(--dv-text-light);">&copy; 2022&ndash;2026 DolceVita Hospitality Saudi Arabia</div>
+  <div class="slide-footer">&copy; 2022&ndash;2026 DolceVita Hospitality Saudi Arabia</div>
 </section>
 
 <!-- ══════════════════════════════════════════════════════ -->
 <!-- SLIDE 7 — PHASE 2                                     -->
 <!-- ══════════════════════════════════════════════════════ -->
-<section class="slide slide--white slide--luxury">
+<section class="slide slide--luxury">
   <div class="slide-topbar">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
     <div class="topbar-partners">
@@ -742,29 +736,29 @@
   </div>
   <div class="slide-body slide-body--top">
     <div class="phase-tag">Phase 2 &mdash; Months 13 to 36</div>
-    <h2 class="slide-title slide-title--small" style="color:var(--dv-dark);">Design, Technical Services &amp;<br>Operational Integration</h2>
+    <h2 class="slide-title slide-title--small">Design, Technical Services &amp;<br>Operational Integration</h2>
     <p style="font-size:10.5px; color:var(--dv-text-light); margin:-8px 0 8px; font-style:italic;">Working alongside the design teams, we will:</p>
     <div class="two-col dense-content" style="margin-top:4px;">
       <div class="col-block">
         <h4>Master Plan &amp; Architectural Review</h4>
-        <ul style="color:var(--dv-text);">
+        <ul>
           <li>Review master plans, site plans and circulation (guest, staff, logistics, services).</li>
           <li>Ensure efficient zoning of rooms, public areas, aqua park, residences, BOH, parking and access.</li>
         </ul>
         <h4>Configuration &amp; Space Planning</h4>
-        <ul style="color:var(--dv-text);">
+        <ul>
           <li>Confirm and fine-tune the number of keys and their mix (standard rooms, suites, special units, branded residences).</li>
           <li>Optimize public areas, F&amp;B outlets, meeting rooms, spa, aqua park and kids&rsquo; areas in line with target segments and revenue strategy.</li>
           <li>Validate and improve BOH areas (receiving, storage, kitchens, laundry, staff facilities) for operational efficiency.</li>
         </ul>
         <h4>Interior Design Integration</h4>
-        <ul style="color:var(--dv-text);">
+        <ul>
           <li>Review interior design concepts and layouts for rooms, corridors, F&amp;B, meeting rooms and public spaces.</li>
           <li>Ensure that functional, emotional and brand requirements are all met.</li>
           <li>Advise on signage concepts (external and internal) that support navigation, safety and commercial flows.</li>
         </ul>
         <h4>Guest Journey Flows &amp; Experience Blueprints</h4>
-        <ul style="color:var(--dv-text);">
+        <ul>
           <li>Map physical and emotional guest flows: arrivals, circulation to rooms, F&amp;B, wellness, kids&rsquo; activities, etc&hellip;</li>
           <li>Identify friction points and re-design them into opportunities for delight and revenue (e.g. upgrade moments, cross-sell touchpoints, intuitive signposting toward high-margin venues).</li>
           <li>Develop experience blueprints that link design, staffing, SOPs and technology to the desired emotional outcome and commercial KPIs (ADR, TRevPAR, upsell conversion, repeat and referral rates).</li>
@@ -772,19 +766,19 @@
       </div>
       <div class="col-block">
         <h4>Food &amp; Beverage Infrastructure Design</h4>
-        <ul style="color:var(--dv-text);">
+        <ul>
           <li>Review and optimize layouts for restaurants, bars, caf&eacute;s, banqueting and support areas.</li>
           <li>Define preliminary F&amp;B equipment lists and functional zoning (kitchens, cold rooms, bars, counters, dishwashing, storage).</li>
           <li>Support evaluation and recommendation of key F&amp;B equipment and suppliers.</li>
         </ul>
         <h4>Information Technology &amp; Systems</h4>
-        <ul style="color:var(--dv-text);">
+        <ul>
           <li>Advise on the hotel&rsquo;s IT backbone, including PMS, POS, reservations and distribution connectivity.</li>
           <li>Review requirements for network, back-office systems, telephony, CCTV, key systems, TV, payment solutions and guest internet.</li>
           <li>Ensure AV systems for meeting rooms and event spaces are aligned with the market positioning and revenue plan.</li>
         </ul>
         <h4>Construction Support &amp; Project Monitoring</h4>
-        <ul style="color:var(--dv-text);">
+        <ul>
           <li>Provide technical assistance visits at key stages.</li>
           <li>Review detailed drawings and design modifications for operational and brand compliance.</li>
           <li>Flag risks early and propose corrective actions.</li>
@@ -792,13 +786,13 @@
       </div>
     </div>
   </div>
-  <div class="slide-footer" style="color:var(--dv-text-light);">&copy; 2022&ndash;2026 DolceVita Hospitality Saudi Arabia</div>
+  <div class="slide-footer">&copy; 2022&ndash;2026 DolceVita Hospitality Saudi Arabia</div>
 </section>
 
 <!-- ══════════════════════════════════════════════════════ -->
 <!-- SLIDE — PHASE 2 (Part 2)                              -->
 <!-- ══════════════════════════════════════════════════════ -->
-<section class="slide slide--white slide--luxury">
+<section class="slide slide--luxury">
   <div class="slide-topbar">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 823.17 421.28"><g><path class="lf" d="M151.31,349.51h-.18c-27.92.03-43.94,13.1-43.94,35.88s16.04,35.88,44.03,35.88,44.02-13.08,44.02-35.88-16.01-35.85-43.93-35.88ZM151.22,412.1c-19.75,0-32.5-10.48-32.5-26.71s12.75-26.52,32.5-26.52,32.15,10.41,32.15,26.52-12.32,26.71-32.15,26.71Z"/><polygon class="lf" points="284.16 411.17 235.94 411.17 235.94 350.98 224.77 350.98 224.77 419.82 233.86 419.86 284.16 419.86 284.16 411.17"/><path class="lf" d="M351.24,358.72c17.9,0,25.05,7.94,27.85,15.13h11.34c-2.75-15.49-16.88-24.32-39.14-24.34h-.14c-27.62.03-44.11,13.51-44.11,36.06s16.12,35.71,44.2,35.71c22.56,0,36.36-8.45,39.14-23.86h-11.33c-2.81,7.13-9.96,15.01-27.81,15.01-20.43,0-32.63-10.04-32.63-26.86s12.2-26.85,32.63-26.85Z"/><polygon class="lf" points="550.89 413.55 524.77 350.98 512.39 350.98 542.77 419.81 559 419.81 589.11 350.98 577.01 350.98 550.89 413.55"/><polygon class="lf" points="776.56 350.98 746.45 419.82 758.55 419.82 784.68 357.23 810.79 419.82 823.17 419.82 792.78 350.98 776.56 350.98"/><rect class="lf" x="618.02" y="350.98" width="11.17" height="68.83"/><polygon class="lf" points="687.94 419.81 699.11 419.81 699.11 366.27 687.94 377.44 687.94 419.81"/><polygon class="lf" points="657.11 359.84 692.27 359.84 700.22 359.84 702.89 359.84 716.23 359.84 729.94 359.84 729.94 350.98 657.11 350.98 657.11 359.84"/><path class="lf" d="M39.65,350.98H0v9.18h39.29c24.44,0,29.56,13.59,29.56,25,0,9.51-3.84,25.46-29.56,25.46H11.17v-44.03l-11.17,11.17v42.05h39.65c25.84,0,40.66-12.63,40.66-34.65s-13.68-34.18-40.66-34.18Z"/><polygon class="lf" points="431.42 399.84 431.42 389.74 487.33 389.74 487.33 381.05 431.42 381.05 431.42 359.66 487.33 359.66 487.33 350.98 431.42 350.98 420.25 350.98 420.25 419.82 487.47 419.82 487.47 411.13 431.42 411.13 431.42 399.84"/><polygon class="lf" points="388.33 188.04 303.66 130.5 303.66 172.51 357.42 209.04 388.33 188.04"/><polygon class="lf" points="503.57 109.34 503.57 67.33 411.58 129.85 319.6 67.33 319.6 109.34 411.58 171.86 503.57 109.34"/><polygon class="lf" points="476.32 54.1 476.32 12.09 411.58 56.09 346.84 12.09 346.84 54.1 411.59 98.1 476.32 54.1"/><polygon class="lf" points="519.51 172.51 519.51 130.5 434.84 188.04 465.74 209.04 519.51 172.51"/><polygon class="lf" points="442.48 224.85 411.58 203.84 380.68 224.85 411.59 245.85 442.48 224.85"/><polygon class="lf" points="425.45 17.27 411.58 0 397.72 17.27 411.58 26.7 425.45 17.27"/></g></svg>
     <div class="topbar-partners">
@@ -808,44 +802,44 @@
   </div>
   <div class="slide-body slide-body--top">
     <div class="phase-tag">Phase 2 &mdash; Months 13 to 36</div>
-    <h2 class="slide-title slide-title--small" style="color:var(--dv-dark);">PreOpening Preparation, Guest Experience<br>&amp; Commercial Launch</h2>
+    <h2 class="slide-title slide-title--small">PreOpening Preparation, Guest Experience<br>&amp; Commercial Launch</h2>
     <p style="font-size:10.5px; color:var(--dv-text-light); margin:-8px 0 8px; font-style:italic;">We will support the project through pre-opening and launch by focusing on:</p>
     <div class="two-col dense-content" style="margin-top:4px;">
       <div class="col-block">
         <h4>Pre-Opening Project Management</h4>
-        <ul style="color:var(--dv-text);">
+        <ul>
           <li>Develop pre-opening critical paths and milestone plans.</li>
           <li>Coordinate with project stakeholders.</li>
           <li>Monitor readiness and manage risk items.</li>
         </ul>
         <h4>Organization &amp; Staffing</h4>
-        <ul style="color:var(--dv-text);">
+        <ul>
           <li>Organizational structures and key positions</li>
           <li>Defining job profiles and recruitment priorities.</li>
         </ul>
         <h4>Commercial Strategy &amp; Launch Plan</h4>
-        <ul style="color:var(--dv-text);">
+        <ul>
           <li>Set up a residential sales roadmap (lead generation, events, site-visits, closing) and a resort launch plan (pricing, distribution, partnerships).</li>
           <li>Link marketing and digital strategies to specific KPIs (direct booking ratio, unit sales, upsell ratios, campaign ROIs).</li>
         </ul>
       </div>
       <div class="col-block">
         <h4>Guest Experience, Service Design &amp; Culture Activation</h4>
-        <ul style="color:var(--dv-text);">
+        <ul>
           <li>Create concrete guest journeys and service scenarios for each segment</li>
           <li>Design service rituals and interaction techniques at key revenue moments.</li>
           <li>Use the Learn by Being&trade; model to train leaders and teams on the floor.</li>
           <li>Deploy GX tools to monitor guest and team culture and relate these metrics to revenue KPIs (ADR, TRevPAR, upsell conversion, repeat and referral rates).</li>
         </ul>
         <h4>Pre-Opening Readiness Audits</h4>
-        <ul style="color:var(--dv-text);">
+        <ul>
           <li>Conduct readiness checks for rooms, public areas, systems and teams.</li>
           <li>Provide final recommendations and action plans prior to soft opening.</li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="slide-footer" style="color:var(--dv-text-light);">&copy; 2022&ndash;2026 DolceVita Hospitality Saudi Arabia</div>
+  <div class="slide-footer">&copy; 2022&ndash;2026 DolceVita Hospitality Saudi Arabia</div>
 </section>
 
 <!-- ══════════════════════════════════════════════════════ -->
